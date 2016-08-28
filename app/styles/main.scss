@@ -4,6 +4,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 // endbower
 
 @import "transitions";
+@import "variables";
 
 .browsehappy {
   margin: 0.2em 0;
@@ -26,7 +27,7 @@ body {
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 10px solid #ffbf00;
   margin-bottom: 10px;
 
   /* Make the masthead heading the same height as the navigation */
@@ -91,3 +92,29 @@ body {
     border-bottom: 0;
   }
 }
+
+
+// test below 
+
+
+.marketing {
+  h4 {
+    a {
+      color: $brand-warning;
+    }
+  }
+  p {
+    color: $brand-primary;
+  }
+}
+
+//border radius change 3.7 
+.container .jumbotron {
+    @include border-top-radius(0px);
+    @include border-bottom-radius(50px);
+}
+
+.container .jumbotron {
+  @include gradient-striped;
+}
+
