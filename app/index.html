@@ -39,13 +39,17 @@
             <a class="navbar-brand" href="#/">Weather</a>
           </div>
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
+   
+      <!-- nav active change test -->
+          
+            <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="HeaderCtrl">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
+              <li ng-class="{ active: isActive('/')}"><a href="#/">Home</a></li>
+              <li ng-class="{ active: isActive('/about')}"><a ng-href="#/about">About</a></li>
+          
             </ul>
           </div>
+          
         </div>
       </div>
     </div>
@@ -98,6 +102,7 @@
         <script src="scripts/controllers/current.js"></script>
         <script src="scripts/services/forecast.js"></script>
         <script src="scripts/controllers/forecast.js"></script>
+            <script src="scripts/controllers/HeaderCtrl.js"></script>
         <!-- endbuild -->
 </body>
 </html>
