@@ -16,17 +16,18 @@
       <p class="lead">{{citiesFound.count}} cities found matching the query: {{searchQuery}}.</p>
       <dl ng-repeat="city in citiesFound.list">
         <dt>{{city.name}}, {{city.sys.country}}</dt>
-        <dd>{{city.weather[0].main}} - {{city.weather[0].description}}</dd>
+        <img ng-src="http://openweathermap.org/img/w/{{city.weather[0].icon}}.png">
+        <dd>{{city.weather[0].description}}</dd>
         <dt>Temperature</dt>
         <dd>{{city.main.temp}}&deg;F</dd>
-        <img ng-src="http://openweathermap.org/img/w/{{city.weather[0].icon}}.png">
-        <dd><a ng-href="/#/current/{{city.id}}" class="btn btn-lg btn-primary">View Weather</a></dd>
+        <br>
+        <dd><a ng-href="/#/current/{{city.id}}" class="btn btn-lg btn-primary">Extended Details</a></dd>
       </dl>
     </div>
   </p>
 </div>
 <div ng-if="storage.savedCities">
-  <h2>Saved Cities</h2>
+  <h2>Your Saved Cities</h2>
   <ul class="saved-cities-list">
     <li ng-repeat="city in storage.savedCities">
       <a ng-href="/#/current/{{city.id}}" class="btn btn-lg btn-primary">{{city.name}}</a>
